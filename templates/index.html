@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avengers</title>
+    <!-- Latest compiled and minified CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="./static/style.css" rel="stylesheet">
+
+</head>
+<body>
+{% include 'nav.html' %}
+<h1>Avengers Hiring</h1>
+<img class="banner" src="./static/images/avengers2.jpg" height="360px" >
+<h2>About Avengers</h2>
+<div class="container w-75">
+<p class="center_text">Earth's Mightiest Heroes stand as the planet's first line of defense against the most powerful threats in the universe.
+The Avengers are a team of fictional superheroes and the protagonists of the Marvel Cinematic Universe (MCU) media franchise, based on the Marvel Comics team of the same name created by Stan Lee and Jack Kirby in 1963</p>
+</div>
+<h2><u> Job Openings</u></h2>
+
+{% for j in job %}
+     <div class="container w-75 mt-4 mb-4" style="border-bottom:1px solid lightgrey;padding-bottom:8px ">
+      <div class="row">
+        <div class="col">
+        <h3>{{job[0]}}</h3>
+       <h5><b>Location:</b>  {{job[0][2]}}</h5>
+            <h5><b>Salary:</b> {{job['Salary']}}</h5>
+            </div>
+        <div class="col">
+            <button class="btn btn-outline-primary float-end" style="margin-top:40px">Apply</button>
+       </div>
+    </div>
+
+
+     </div>
+{% endfor %}
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>
